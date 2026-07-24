@@ -2,17 +2,17 @@
 
 A dependency-free generator for readable passwords such as:
 
-`482-Gentle-Rocket!`
+`482-Gentle-Rocket-!`
 
 ## Security design
 
 - Every choice is generated locally with the browser's cryptographically secure random-number generator.
 - Every digit is selected independently from `1–9`.
 - Words come from curated lists of 512 positive or neutral adjectives and 512 child-friendly nouns.
-- The default uses two words, three digits and one clear symbol in a stable `123-Red-Dog!`-style order.
+- The default uses two words, three digits and one clear symbol in a stable `123-Red-Dog-!`-style order.
 - Words, digits and special characters can each be adjusted from one to three.
 - The separator can be replaced with another visible character.
-- The separator is placed between the number and word groups, while special characters sit directly beside the neighbouring group.
+- The separator is placed between every group, including on both sides of a special-character group in the middle.
 - Component groups can be securely shuffled, or placed in a chosen order with the drag-and-drop editor.
 - The editor uses a touch-friendly drag handle, shows a live drop marker, confirms moved rows, includes arrow controls for keyboards, and hides groups whose count is zero.
 - **Randomise all** securely changes every count from one to three, the separator and the group order.
