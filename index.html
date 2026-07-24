@@ -9,7 +9,7 @@
   <title>Simple Password Generator</title>
   <link rel="stylesheet" href="styles-v7.css">
   <script src="words-v3.js" defer></script>
-  <script src="app-v7.js" defer></script>
+  <script src="app-v8.js" defer></script>
 </head>
 <body>
   <main>
@@ -23,9 +23,9 @@
       <div class="control">
         <div class="control-heading">
           <label for="word-count">Words</label>
-          <output id="word-count-value" class="control-value" for="word-count">4</output>
+          <output id="word-count-value" class="control-value" for="word-count">2</output>
         </div>
-        <input id="word-count" type="range" min="2" max="6" value="4">
+        <input id="word-count" type="range" min="1" max="3" value="2">
       </div>
 
       <div class="control">
@@ -33,7 +33,7 @@
           <label for="number-count">Numbers</label>
           <output id="number-count-value" class="control-value" for="number-count">3</output>
         </div>
-        <input id="number-count" type="range" min="0" max="8" value="3">
+        <input id="number-count" type="range" min="1" max="3" value="3">
       </div>
 
       <div class="control">
@@ -41,7 +41,7 @@
           <label for="special-count">Special characters</label>
           <output id="special-count-value" class="control-value" for="special-count">1</output>
         </div>
-        <input id="special-count" type="range" min="0" max="4" value="1">
+        <input id="special-count" type="range" min="1" max="3" value="1">
       </div>
 
       <div class="control">
@@ -55,12 +55,12 @@
         <div class="order-heading">
           <span>Order</span>
           <label class="random-option" for="random-order">
-            <input id="random-order" type="checkbox" checked aria-controls="manual-order" aria-expanded="false">
+            <input id="random-order" type="checkbox" aria-controls="manual-order" aria-expanded="true">
             <span>Random</span>
           </label>
         </div>
 
-        <div id="manual-order" class="manual-order" hidden>
+        <div id="manual-order" class="manual-order">
           <p id="order-help" class="order-help">Drag a row—the blue line shows where it will land—or use the arrow buttons.</p>
           <ul id="order-list" class="order-list" aria-label="Password group order" aria-describedby="order-help">
             <li class="order-item" draggable="true" aria-grabbed="false" data-group="numbers">
@@ -87,7 +87,7 @@
                 <circle cx="11" cy="19" r="1.5"></circle>
               </svg>
               <span class="order-name">Words</span>
-              <span id="order-words-count" class="order-count" aria-label="4 words">×4</span>
+              <span id="order-words-count" class="order-count" aria-label="2 words">×2</span>
               <button class="order-move" type="button" data-direction="up" aria-label="Move Words up">↑</button>
               <button class="order-move" type="button" data-direction="down" aria-label="Move Words down">↓</button>
             </li>
