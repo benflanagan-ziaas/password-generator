@@ -14,7 +14,7 @@ A dependency-free generator for readable passwords such as:
 - The separator can be replaced with another visible character.
 - The separator is placed between every non-empty group, including special characters.
 - Component groups can be securely shuffled, or placed in a chosen order with the drag-and-drop editor.
-- The editor shows a live drop marker, confirms moved rows, includes arrow controls for touchscreens and keyboards, and hides groups whose count is zero.
+- The editor uses a touch-friendly drag handle, shows a live drop marker, confirms moved rows, includes arrow controls for keyboards, and hides groups whose count is zero.
 - **Randomise all** securely changes every count, the separator and the group order while keeping at least four words, one digit and one special character.
 - Special characters are selected from nine clear, commonly accepted symbols.
 - Generated passwords are never transmitted, stored or logged.
