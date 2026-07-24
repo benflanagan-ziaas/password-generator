@@ -14,8 +14,10 @@ A dependency-free generator for readable passwords such as:
 - The separator can be replaced with another visible character.
 - The separator is placed between every group, including on both sides of a special-character group in the middle.
 - Component groups can be securely shuffled, or placed in a chosen order with the drag-and-drop editor.
+- On wider screens, component amounts and ordering are separated into clear left and right panes; the controls stack on smaller screens.
 - The editor uses a touch-friendly drag handle, shows a live drop marker, confirms moved rows, includes arrow controls for keyboards, and hides groups whose count is zero.
 - **Randomise all** securely changes every count from one to three, the separator and the group order.
+- Regenerate, Randomise all and Copy each provide a distinct icon animation, while respecting reduced-motion preferences.
 - Special characters are selected from nine clear, commonly accepted symbols.
 - Generated passwords are never transmitted, stored or logged.
 - The site has no analytics, external libraries, third-party scripts, forms or network requests.
@@ -35,3 +37,4 @@ The compact default provides about 30.7 bits of entropy. Enabling random group o
 ## GitHub Pages
 
 The site is published from the repository's `main` branch and root (`/`) folder under **Settings → Pages**.
+
