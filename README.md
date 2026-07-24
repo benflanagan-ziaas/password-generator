@@ -2,20 +2,20 @@
 
 A dependency-free generator for readable passwords such as:
 
-`482-Gentle-Rocket-Harbor-Pencil!`
+`482-Gentle-Rocket!`
 
 ## Security design
 
 - Every choice is generated locally with the browser's cryptographically secure random-number generator.
 - Every digit is selected independently from `1–9`.
 - Words come from curated lists of 512 positive or neutral adjectives and 512 child-friendly nouns.
-- The default uses four words, three digits and one clear symbol, so even the shortest possible result exceeds 15 characters.
-- The number of words, digits and special characters can be adjusted.
+- The default uses two words, three digits and one clear symbol in a stable `123-Red-Dog!`-style order.
+- Words, digits and special characters can each be adjusted from one to three.
 - The separator can be replaced with another visible character.
-- The separator is placed between every non-empty group, including special characters.
+- The separator is placed between the number and word groups, while special characters sit directly beside the neighbouring group.
 - Component groups can be securely shuffled, or placed in a chosen order with the drag-and-drop editor.
 - The editor uses a touch-friendly drag handle, shows a live drop marker, confirms moved rows, includes arrow controls for keyboards, and hides groups whose count is zero.
-- **Randomise all** securely changes every count, the separator and the group order while keeping at least four words, one digit and one special character.
+- **Randomise all** securely changes every count from one to three, the separator and the group order.
 - Special characters are selected from nine clear, commonly accepted symbols.
 - Generated passwords are never transmitted, stored or logged.
 - The site has no analytics, external libraries, third-party scripts, forms or network requests.
@@ -25,7 +25,7 @@ Never add API keys, passwords, access tokens or other secrets to this repository
 
 ## Important limitation
 
-The default word, digit and symbol choices provide about 48.7 bits of entropy. Random group order adds about 2.6 bits when all three groups are enabled, for roughly 51 bits in total. Adding more words matters much more; removing components reduces the password space. This generator is still intended for readability rather than the highest-value account security. Use a reputable password manager-generated password for email, banking, administrator and primary accounts, and turn on multi-factor authentication wherever possible.
+The compact default provides about 30.7 bits of entropy. Enabling random group order adds about 2.6 bits; choosing three words adds roughly another nine bits. This generator prioritises readability and is not suitable for the highest-value accounts at its default settings. Use three words where a longer memorable password is acceptable, or use a reputable password manager-generated password for email, banking, administrator and primary accounts. Turn on multi-factor authentication wherever possible.
 
 ## Guidance followed
 
