@@ -131,6 +131,12 @@ button:focus-visible {
   line-height: 1.5;
 }
 
+.copy-fallback {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+
 @media (max-width: 440px) {
   .actions {
     grid-template-columns: 1fr;
