@@ -47,8 +47,7 @@
       const textArea = document.createElement("textarea");
       textArea.value = password;
       textArea.setAttribute("readonly", "");
-      textArea.style.position = "fixed";
-      textArea.style.opacity = "0";
+      textArea.className = "copy-fallback";
       document.body.appendChild(textArea);
       textArea.select();
       document.execCommand("copy");
