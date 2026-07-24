@@ -7,9 +7,9 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none';">
   <title>Simple Password Generator</title>
-  <link rel="stylesheet" href="styles-v4.css">
+  <link rel="stylesheet" href="styles-v5.css">
   <script src="words-v3.js" defer></script>
-  <script src="app-v4.js" defer></script>
+  <script src="app-v5.js" defer></script>
 </head>
 <body>
   <main>
@@ -23,9 +23,9 @@
       <div class="control">
         <div class="control-heading">
           <label for="word-count">Words</label>
-          <output id="word-count-value" class="control-value" for="word-count">2</output>
+          <output id="word-count-value" class="control-value" for="word-count">4</output>
         </div>
-        <input id="word-count" type="range" min="2" max="6" value="2">
+        <input id="word-count" type="range" min="2" max="6" value="4">
       </div>
 
       <div class="control">
@@ -49,6 +49,64 @@
           <label for="separator">Separator</label>
         </div>
         <input id="separator" class="separator-input" type="text" value="-" autocomplete="off" spellcheck="false" aria-label="Separator character">
+      </div>
+
+      <div class="order-control">
+        <div class="order-heading">
+          <span>Order</span>
+          <label class="random-option" for="random-order">
+            <input id="random-order" type="checkbox" checked aria-controls="manual-order" aria-expanded="false">
+            <span>Random</span>
+          </label>
+        </div>
+
+        <div id="manual-order" class="manual-order" hidden>
+          <p id="order-help" class="order-help">Drag the groups to reorder them, or use the arrow buttons.</p>
+          <ul id="order-list" class="order-list" aria-describedby="order-help">
+            <li class="order-item" draggable="true" data-group="numbers">
+              <svg class="drag-handle" viewBox="0 0 16 24" aria-hidden="true">
+                <circle cx="5" cy="5" r="1.5"></circle>
+                <circle cx="11" cy="5" r="1.5"></circle>
+                <circle cx="5" cy="12" r="1.5"></circle>
+                <circle cx="11" cy="12" r="1.5"></circle>
+                <circle cx="5" cy="19" r="1.5"></circle>
+                <circle cx="11" cy="19" r="1.5"></circle>
+              </svg>
+              <span class="order-name">Numbers</span>
+              <span id="order-numbers-count" class="order-count" aria-label="3 numbers">×3</span>
+              <button class="order-move" type="button" data-direction="up" aria-label="Move Numbers up">↑</button>
+              <button class="order-move" type="button" data-direction="down" aria-label="Move Numbers down">↓</button>
+            </li>
+            <li class="order-item" draggable="true" data-group="words">
+              <svg class="drag-handle" viewBox="0 0 16 24" aria-hidden="true">
+                <circle cx="5" cy="5" r="1.5"></circle>
+                <circle cx="11" cy="5" r="1.5"></circle>
+                <circle cx="5" cy="12" r="1.5"></circle>
+                <circle cx="11" cy="12" r="1.5"></circle>
+                <circle cx="5" cy="19" r="1.5"></circle>
+                <circle cx="11" cy="19" r="1.5"></circle>
+              </svg>
+              <span class="order-name">Words</span>
+              <span id="order-words-count" class="order-count" aria-label="4 words">×4</span>
+              <button class="order-move" type="button" data-direction="up" aria-label="Move Words up">↑</button>
+              <button class="order-move" type="button" data-direction="down" aria-label="Move Words down">↓</button>
+            </li>
+            <li class="order-item" draggable="true" data-group="specials">
+              <svg class="drag-handle" viewBox="0 0 16 24" aria-hidden="true">
+                <circle cx="5" cy="5" r="1.5"></circle>
+                <circle cx="11" cy="5" r="1.5"></circle>
+                <circle cx="5" cy="12" r="1.5"></circle>
+                <circle cx="11" cy="12" r="1.5"></circle>
+                <circle cx="5" cy="19" r="1.5"></circle>
+                <circle cx="11" cy="19" r="1.5"></circle>
+              </svg>
+              <span class="order-name">Special characters</span>
+              <span id="order-specials-count" class="order-count" aria-label="1 special character">×1</span>
+              <button class="order-move" type="button" data-direction="up" aria-label="Move Special characters up">↑</button>
+              <button class="order-move" type="button" data-direction="down" aria-label="Move Special characters down">↓</button>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
