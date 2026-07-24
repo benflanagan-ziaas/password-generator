@@ -2,12 +2,12 @@
 
 A dependency-free generator for readable passwords such as:
 
-`482-Gentle-Rocket!`
+`482-Gentle-Rocket-Harbor-Pencil!`
 
 ## Security design
 
 - Every choice is generated locally with the browser's cryptographically secure random-number generator.
-- Each of the three digits is selected independently from `1–9`.
+- Every digit is selected independently from `1–9`.
 - Words come from curated lists of 512 positive or neutral adjectives and 512 child-friendly nouns.
 - The default uses four words, three digits and one clear symbol, so even the shortest possible result exceeds 15 characters.
 - The number of words, digits and special characters can be adjusted.
