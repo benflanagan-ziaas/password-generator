@@ -7,9 +7,9 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none';">
   <title>Simple Password Generator</title>
-  <link rel="stylesheet" href="styles-v9.css">
+  <link rel="stylesheet" href="styles-v10.css">
   <script src="words-v3.js" defer></script>
-  <script src="app-v10.js" defer></script>
+  <script src="app-v11.js" defer></script>
 </head>
 <body>
   <main>
@@ -58,10 +58,6 @@
           <div class="order-control">
             <div class="order-heading">
               <span>Order</span>
-              <label class="random-option" for="random-order">
-                <input id="random-order" type="checkbox" aria-controls="manual-order" aria-expanded="true">
-                <span>Random</span>
-              </label>
             </div>
 
             <div id="manual-order" class="manual-order">
@@ -141,8 +137,8 @@
       </button>
       <button id="copy" type="button">
         <svg class="button-icon copy-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <rect class="copy-front" x="8" y="8" width="11" height="11" rx="2"></rect>
-          <path class="copy-back" d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path>
+          <rect class="copy-back" x="4.5" y="4.5" width="11" height="11" rx="2"></rect>
+          <rect class="copy-front" x="8.5" y="8.5" width="11" height="11" rx="2"></rect>
         </svg>
         <span>Copy</span>
       </button>
