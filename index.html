@@ -3,29 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Generate a memorable password in the format 123-Red-Dog.">
+  <meta name="description" content="Generate a readable password locally in your browser.">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none';">
-  <title>Memorable Password Generator</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none';">
+  <title>Simple Password Generator</title>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <main>
-    <h1>Memorable password generator</h1>
-    <p class="intro">Create a random password using a number, colour and animal.</p>
+    <h1>Simple password generator</h1>
 
     <section class="password-box" aria-label="Generated password">
       <output id="password" aria-live="polite"></output>
-      <div id="status" class="format" aria-live="polite">3-digit number · colour · animal</div>
     </section>
 
     <div class="actions">
-      <button id="generate" class="primary" type="button">Generate password</button>
-      <button id="copy" type="button">Copy password</button>
+      <button id="generate" class="primary" type="button">Regenerate</button>
+      <span class="divider" aria-hidden="true">_</span>
+      <button id="copy" type="button">Copy</button>
     </div>
 
-    <p class="note">This memorable format has limited combinations. Use a password manager for email, banking and other sensitive accounts.</p>
+    <p id="status" class="visually-hidden" aria-live="polite"></p>
   </main>
 </body>
 </html>
