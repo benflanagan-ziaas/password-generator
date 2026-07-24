@@ -13,11 +13,11 @@ A dependency-free generator for readable passwords such as:
 - Words, digits and special characters can each be adjusted from one to three.
 - The separator can be replaced with another visible character.
 - The separator is placed between every group, including on both sides of a special-character group in the middle.
-- Component groups can be securely shuffled, or placed in a chosen order with the drag-and-drop editor.
+- Component groups stay in the chosen drag-and-drop order until **Randomise all** visibly reshuffles the rows.
 - On wider screens, component amounts and the separator live in the left pane, while ordering lives in the right; the panes stack on smaller screens.
 - The editor uses a touch-friendly drag handle, shows a live drop marker, confirms moved rows, includes arrow controls for keyboards, and hides groups whose count is zero.
-- **Randomise all** securely changes every count from one to three, the separator and the group order.
-- Regenerate, Randomise all and Copy each provide a distinct icon animation, while respecting reduced-motion preferences.
+- **Randomise all** securely changes every count from one to three, the separator and the visible group order.
+- Regenerate, Randomise all and Copy each provide a distinct icon animation, while respecting reduced-motion preferences. The order rows move into their new positions, and the two Copy squares overlap before separating again.
 - Special characters are selected from nine clear, commonly accepted symbols.
 - Generated passwords are never transmitted, stored or logged.
 - The site has no analytics, external libraries, third-party scripts, forms or network requests.
