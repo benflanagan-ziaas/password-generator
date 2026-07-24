@@ -4,7 +4,6 @@
   --background: #f4f7fb;
   --surface: #ffffff;
   --text: #182033;
-  --muted: #63708a;
   --border: #dbe2ee;
   --primary: #2457d6;
   --primary-hover: #1848bd;
@@ -18,7 +17,6 @@
     --background: #111827;
     --surface: #1d2738;
     --text: #f5f7fb;
-    --muted: #aab6ca;
     --border: #354157;
     --primary: #78a1ff;
     --primary-hover: #95b5ff;
@@ -45,8 +43,8 @@ body {
 }
 
 main {
-  width: min(100%, 560px);
-  padding: clamp(24px, 6vw, 44px);
+  width: min(100%, 620px);
+  padding: clamp(28px, 7vw, 48px);
   border: 1px solid var(--border);
   border-radius: 22px;
   background: var(--surface);
@@ -54,18 +52,17 @@ main {
 }
 
 h1 {
-  margin: 0;
+  margin: 0 0 30px;
+  text-align: center;
   font-size: clamp(1.65rem, 7vw, 2.35rem);
   line-height: 1.1;
   letter-spacing: -0.035em;
 }
 
-.intro {
-  margin: 12px 0 28px;
-  color: var(--muted);
-}
-
 .password-box {
+  min-height: 94px;
+  display: grid;
+  place-items: center;
   padding: 22px;
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -76,26 +73,28 @@ h1 {
 output {
   display: block;
   overflow-wrap: anywhere;
-  font: 700 clamp(1.45rem, 7vw, 2.15rem) / 1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
-  letter-spacing: -0.03em;
-}
-
-.format {
-  margin-top: 9px;
-  color: var(--muted);
-  font-size: 0.88rem;
+  font: 700 clamp(1.25rem, 5.7vw, 2rem) / 1.25 ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: -0.035em;
 }
 
 .actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
-  margin-top: 18px;
+  margin-top: 20px;
+}
+
+.divider {
+  color: var(--border);
+  font-weight: 700;
+  user-select: none;
 }
 
 button {
   min-height: 48px;
-  padding: 12px 16px;
+  min-width: 118px;
+  padding: 12px 18px;
   border: 1px solid var(--border);
   border-radius: 12px;
   font: inherit;
@@ -124,21 +123,27 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-.note {
-  margin: 24px 0 0;
-  color: var(--muted);
-  font-size: 0.83rem;
-  line-height: 1.5;
-}
-
-.copy-fallback {
+.copy-fallback,
+.visually-hidden {
   position: fixed;
-  opacity: 0;
-  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 420px) {
+  main {
+    padding-inline: 20px;
+  }
+
   .actions {
-    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  button {
+    min-width: 0;
+    flex: 1;
   }
 }
