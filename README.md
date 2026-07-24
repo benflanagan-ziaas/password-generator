@@ -18,6 +18,7 @@ A dependency-free generator for readable passwords such as:
 - The editor uses a touch-friendly drag handle, shows a live drop marker, confirms moved rows, includes arrow controls for keyboards, and hides groups whose count is zero.
 - **Randomise all** securely changes every count from one to three, the separator and the visible group order.
 - Regenerate, Randomise all and Copy each provide a distinct icon animation, while respecting reduced-motion preferences. The order rows move into their new positions, and the two Copy squares overlap before separating again.
+- Sliders pulse as their values move, and the separator field flashes its border when the character changes.
 - Special characters are selected from nine clear, commonly accepted symbols.
 - Generated passwords are never transmitted, stored or logged.
 - The site has no analytics, external libraries, third-party scripts, forms or network requests.
