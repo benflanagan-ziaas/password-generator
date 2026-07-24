@@ -331,18 +331,29 @@ button:focus-visible {
   }
 
   .order-item {
-    gap: 6px;
-    padding-left: 8px;
-    padding-right: 6px;
+    gap: 4px;
+    padding-left: 6px;
+    padding-right: 4px;
   }
 
   .drag-handle {
-    width: 14px;
+    width: 12px;
+  }
+
+  .order-name {
+    font-size: 0.82rem;
   }
 
   .order-count {
+    min-width: 28px;
+    padding-inline: 4px;
+  }
+
+  .order-move {
     min-width: 30px;
-    padding-inline: 5px;
+    min-height: 30px;
+    width: 30px;
+    height: 30px;
   }
 
   .actions {
