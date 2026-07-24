@@ -7,8 +7,9 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none';">
   <title>Simple Password Generator</title>
-  <link rel="stylesheet" href="styles.css?v=2">
-  <script src="app.js?v=2" defer></script>
+  <link rel="stylesheet" href="styles-v3.css">
+  <script src="words-v3.js" defer></script>
+  <script src="app-v3.js" defer></script>
 </head>
 <body>
   <main>
@@ -19,9 +20,20 @@
     </section>
 
     <div class="actions">
-      <button id="generate" class="primary" type="button">Regenerate</button>
-      <span class="divider" aria-hidden="true">_</span>
-      <button id="copy" type="button">Copy</button>
+      <button id="generate" class="primary" type="button">
+        <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 12a8 8 0 1 1-2.34-5.66"></path>
+          <path d="M20 4v6h-6"></path>
+        </svg>
+        <span>Regenerate</span>
+      </button>
+      <button id="copy" type="button">
+        <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="8" y="8" width="11" height="11" rx="2"></rect>
+          <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path>
+        </svg>
+        <span>Copy</span>
+      </button>
     </div>
 
     <p id="status" class="visually-hidden" aria-live="polite"></p>
