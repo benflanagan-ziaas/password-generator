@@ -7,9 +7,9 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none';">
   <title>Simple Password Generator</title>
-  <link rel="stylesheet" href="styles-v3.css">
+  <link rel="stylesheet" href="styles-v4.css">
   <script src="words-v3.js" defer></script>
-  <script src="app-v3.js" defer></script>
+  <script src="app-v4.js" defer></script>
 </head>
 <body>
   <main>
@@ -17,6 +17,39 @@
 
     <section class="password-box" aria-label="Generated password">
       <output id="password" aria-live="polite"></output>
+    </section>
+
+    <section class="controls" aria-label="Password options">
+      <div class="control">
+        <div class="control-heading">
+          <label for="word-count">Words</label>
+          <output id="word-count-value" class="control-value" for="word-count">2</output>
+        </div>
+        <input id="word-count" type="range" min="2" max="6" value="2">
+      </div>
+
+      <div class="control">
+        <div class="control-heading">
+          <label for="number-count">Numbers</label>
+          <output id="number-count-value" class="control-value" for="number-count">3</output>
+        </div>
+        <input id="number-count" type="range" min="0" max="8" value="3">
+      </div>
+
+      <div class="control">
+        <div class="control-heading">
+          <label for="special-count">Special characters</label>
+          <output id="special-count-value" class="control-value" for="special-count">1</output>
+        </div>
+        <input id="special-count" type="range" min="0" max="4" value="1">
+      </div>
+
+      <div class="control">
+        <div class="control-heading">
+          <label for="separator">Separator</label>
+        </div>
+        <input id="separator" class="separator-input" type="text" value="-" autocomplete="off" spellcheck="false" aria-label="Separator character">
+      </div>
     </section>
 
     <div class="actions">
