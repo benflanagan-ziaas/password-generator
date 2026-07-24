@@ -9,8 +9,11 @@ A dependency-free generator for readable passwords such as:
 - Every choice is generated locally with the browser's cryptographically secure random-number generator.
 - Each of the three digits is selected independently from `1–9`.
 - Words come from curated lists of 512 positive or neutral adjectives and 512 child-friendly nouns.
+- The default uses four words, three digits and one clear symbol, so even the shortest possible result exceeds 15 characters.
 - The number of words, digits and special characters can be adjusted.
 - The separator can be replaced with another visible character.
+- Component groups can be securely shuffled, or placed in a chosen order with the drag-and-drop editor.
+- The editor also includes arrow controls for touchscreens and keyboards, and hides groups whose count is zero.
 - Special characters are selected from nine clear, commonly accepted symbols.
 - Generated passwords are never transmitted, stored or logged.
 - The site has no analytics, external libraries, third-party scripts, forms or network requests.
@@ -20,7 +23,12 @@ Never add API keys, passwords, access tokens or other secrets to this repository
 
 ## Important limitation
 
-The default settings have 1,719,926,784 possible combinations (about 30.7 bits of entropy). Adding components increases the password space; removing them reduces it. This generator is still intended for readability rather than high-value account security. Use a password manager-generated password for email, banking, administrator and primary accounts.
+The default word, digit and symbol choices provide about 48.7 bits of entropy. Random group order adds about 2.6 bits when all three groups are enabled, for roughly 51 bits in total. Adding more words matters much more; removing components reduces the password space. This generator is still intended for readability rather than the highest-value account security. Use a reputable password manager-generated password for email, banking, administrator and primary accounts, and turn on multi-factor authentication wherever possible.
+
+## Guidance followed
+
+- [NIST SP 800-63B](https://pages.nist.gov/800-63-4/sp800-63b.html) prioritises password length, requires at least 15 characters for single-factor use, permits long passphrases, and advises against arbitrary character-composition rules.
+- The [UK National Cyber Security Centre](https://www.ncsc.gov.uk/collection/top-tips-for-staying-secure-online/three-random-words) recommends random-word passphrases for a strong balance of length and memorability, and warns that lookalike substitutions add little security while hurting recall.
 
 ## GitHub Pages
 
