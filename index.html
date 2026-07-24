@@ -7,7 +7,7 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none';">
   <title>Simple Password Generator</title>
-  <link rel="stylesheet" href="styles-v8.css">
+  <link rel="stylesheet" href="styles-v9.css">
   <script src="words-v3.js" defer></script>
   <script src="app-v10.js" defer></script>
 </head>
@@ -44,6 +44,13 @@
               <output id="special-count-value" class="control-value" for="special-count">1</output>
             </div>
             <input id="special-count" type="range" min="1" max="3" value="1">
+          </div>
+
+          <div class="control">
+            <div class="control-heading">
+              <label for="separator">Separator</label>
+            </div>
+            <input id="separator" class="separator-input" type="text" value="-" autocomplete="off" spellcheck="false" aria-label="Separator character">
           </div>
         </div>
 
@@ -109,12 +116,6 @@
         </div>
       </div>
 
-      <div class="control separator-control">
-        <div class="control-heading">
-          <label for="separator">Separator</label>
-        </div>
-        <input id="separator" class="separator-input" type="text" value="-" autocomplete="off" spellcheck="false" aria-label="Separator character">
-      </div>
     </section>
 
     <div class="actions">
