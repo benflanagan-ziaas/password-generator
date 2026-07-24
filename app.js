@@ -6,15 +6,45 @@
   const generateButton = document.getElementById("generate");
   const copyButton = document.getElementById("copy");
 
-  const colours = Object.freeze([
-    "Red", "Blue", "Green", "Yellow", "Orange", "Purple", "Pink", "Silver",
-    "Gold", "Black", "White", "Brown", "Teal", "Indigo", "Violet", "Coral"
+  const adjectives = Object.freeze([
+    "Able", "Agile", "Airy", "Amazing", "Awesome", "Balanced", "Bold", "Bouncy",
+    "Brave", "Breezy", "Bright", "Brisk", "Bubbly", "Calm", "Careful", "Caring",
+    "Charming", "Cheerful", "Chipper", "Clever", "Cozy", "Creative", "Crisp", "Curious",
+    "Daring", "Dazzling", "Delightful", "Dreamy", "Dynamic", "Eager", "Earnest", "Easygoing",
+    "Electric", "Elegant", "Epic", "Excellent", "Fabulous", "Fair", "Fancy", "Fearless",
+    "Festive", "Fluffy", "Focused", "Friendly", "Fresh", "Fun", "Fuzzy", "Gentle",
+    "Glad", "Gleaming", "Glowing", "Golden", "Graceful", "Grand", "Grateful", "Great",
+    "Handy", "Happy", "Hearty", "Helpful", "Honest", "Hopeful", "Humble", "Inventive",
+    "Jolly", "Joyful", "Keen", "Kind", "Lively", "Lovely", "Lucky", "Magical",
+    "Marvelous", "Mellow", "Merry", "Mighty", "Musical", "Neat", "Nimble", "Noble",
+    "Patient", "Peaceful", "Playful", "Plucky", "Polite", "Proud", "Quick", "Quiet",
+    "Radiant", "Rapid", "Ready", "Relaxed", "Reliable", "Robust", "Rosy", "Safe",
+    "Sandy", "Sensible", "Shiny", "Silky", "Sincere", "Sleek", "Smart", "Smooth",
+    "Snappy", "Snug", "Soft", "Sparkling", "Sparkly", "Speedy", "Spry", "Steady",
+    "Sturdy", "Sunny", "Super", "Swift", "Thoughtful", "Tidy", "Tiny", "Trusty",
+    "Upbeat", "Vibrant", "Vivid", "Warm", "Whimsical", "Wise", "Witty", "Wonderful"
   ]);
 
-  const animals = Object.freeze([
-    "Dog", "Cat", "Fox", "Bear", "Tiger", "Lion", "Panda", "Otter",
-    "Rabbit", "Badger", "Falcon", "Dolphin", "Koala", "Gecko", "Moose", "Zebra"
+  const nouns = Object.freeze([
+    "Acorn", "Airship", "Anchor", "Apple", "Apron", "Arrow", "Backpack", "Balloon",
+    "Bamboo", "Basket", "Beacon", "Bell", "Bench", "Berry", "Bicycle", "Blanket",
+    "Boat", "Book", "Bottle", "Boulder", "Bridge", "Bubble", "Bucket", "Button",
+    "Cabin", "Cactus", "Camera", "Candle", "Canoe", "Carousel", "Castle", "Chalk",
+    "Chestnut", "Clover", "Cloud", "Comet", "Compass", "Cookie", "Coral", "Crayon",
+    "Crown", "Crystal", "Cupcake", "Daisy", "Dandelion", "Drum", "Echo", "Feather",
+    "Fern", "Firefly", "Firework", "Flag", "Flower", "Flute", "Forest", "Fountain",
+    "Frisbee", "Garden", "Garland", "Gem", "Glacier", "Globe", "Guitar", "Hammock",
+    "Harbor", "Hat", "Helmet", "Hill", "Horizon", "Icicle", "Igloo", "Island",
+    "Jacket", "Jewel", "Key", "Kite", "Lagoon", "Lake", "Lantern", "Leaf",
+    "Lemon", "Library", "Lighthouse", "Maple", "Marble", "Meadow", "Melody", "Moon",
+    "Mountain", "Muffin", "Mushroom", "Notebook", "Ocean", "Orchard", "Paintbox", "Paintbrush",
+    "Paper", "Pebble", "Pencil", "Piano", "Picnic", "Pinecone", "Pinwheel", "Planet",
+    "Pocket", "Pond", "Postcard", "Puzzle", "Rainbow", "Raindrop", "Ribbon", "River",
+    "Rocket", "Sailboat", "Sandcastle", "Scarf", "Shell", "Ship", "Skateboard", "Snowball",
+    "Snowflake", "Spark", "Spoon", "Sprout", "Star", "Sticker", "Stone", "Story"
   ]);
+
+  const symbols = Object.freeze(["!", "@", "#", "$", "%", "&", "*", "+", "="]);
 
   function secureInteger(maxExclusive) {
     const range = 0x100000000;
@@ -28,14 +58,18 @@
     return values[0] % maxExclusive;
   }
 
-  function generatePassword() {
-    const number = 100 + secureInteger(900);
-    const colour = colours[secureInteger(colours.length)];
-    const animal = animals[secureInteger(animals.length)];
+  function secureDigit() {
+    return 1 + secureInteger(9);
+  }
 
-    passwordOutput.textContent = `${number}-${colour}-${animal}`;
-    status.textContent = "3-digit number · colour · animal";
-    copyButton.textContent = "Copy password";
+  function generatePassword() {
+    const digits = `${secureDigit()}${secureDigit()}${secureDigit()}`;
+    const adjective = adjectives[secureInteger(adjectives.length)];
+    const noun = nouns[secureInteger(nouns.length)];
+    const symbol = symbols[secureInteger(symbols.length)];
+
+    passwordOutput.textContent = `${digits}-${adjective}-${noun}${symbol}`;
+    status.textContent = "";
   }
 
   async function copyPassword() {
@@ -54,7 +88,6 @@
       textArea.remove();
     }
 
-    copyButton.textContent = "Copied!";
     status.textContent = "Password copied to clipboard";
   }
 
