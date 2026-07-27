@@ -18,6 +18,7 @@ A dependency-free generator for readable passwords such as:
 - The editor uses a touch-friendly drag handle, shows a live drop marker, confirms moved rows, includes arrow controls for keyboards, and hides groups whose count is zero.
 - **Randomise all** securely changes every count from one to three, the separator and the visible group order.
 - Regenerate, Randomise all and Copy each provide a distinct icon animation, while respecting reduced-motion preferences. The order rows move into their new positions, and the two Copy squares overlap before separating again.
+- Regenerate animates the password panel as the new value appears. Copy launches the current password with a paper-airplane chip towards the button.
 - The separator field flashes its border when the character changes.
 - **Randomise all** smoothly moves the slider thumbs to guaranteed-new values while their number badges pop at each step.
 - On phones and narrow embedded views such as Teams, the three main actions stack at equal full width in their natural Regenerate, Randomise all, Copy order.
