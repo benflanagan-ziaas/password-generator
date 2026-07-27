@@ -14,7 +14,8 @@ A dependency-free generator for readable passwords such as:
 - The separator can be replaced with another visible character.
 - The separator is placed between every group, including on both sides of a special-character group in the middle.
 - Component groups stay in the chosen drag-and-drop order until **Randomise all** visibly reshuffles the rows.
-- On wider screens, component amounts and the separator live in the left pane, while ordering lives in the right; the panes stack on smaller screens.
+- On wider screens, component amounts and the separator live in the left pane, while ordering lives in the right.
+- On phones and narrow Teams views, those controls collapse into an animated Settings panel so the default generator fits within one screen.
 - The editor uses a touch-friendly drag handle, shows a live drop marker, confirms moved rows, includes arrow controls for keyboards, and hides groups whose count is zero.
 - **Randomise all** securely changes every count from one to three, the separator and the visible group order.
 - Regenerate, Randomise all and Copy each provide a distinct icon animation, while respecting reduced-motion preferences. The order rows move into their new positions, and the two Copy squares overlap before separating again.
