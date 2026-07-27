@@ -7,9 +7,9 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none';">
   <title>Simple Password Generator</title>
-  <link rel="stylesheet" href="styles-v15.css">
+  <link rel="stylesheet" href="styles-v16.css">
   <script src="words-v3.js" defer></script>
-  <script src="app-v14.js" defer></script>
+  <script src="app-v15.js" defer></script>
 </head>
 <body>
   <main>
@@ -142,6 +142,14 @@
         </svg>
         <span>Copy</span>
       </button>
+    </div>
+
+    <div id="copy-flight" class="copy-flight" aria-hidden="true">
+      <span id="copy-flight-password" class="copy-flight-password"></span>
+      <svg class="copy-flight-icon" viewBox="0 0 24 24">
+        <path d="m22 2-7 20-4-9-9-4Z"></path>
+        <path d="M22 2 11 13"></path>
+      </svg>
     </div>
 
     <p id="status" class="visually-hidden" aria-live="polite"></p>
