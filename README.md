@@ -20,6 +20,7 @@ A dependency-free generator for readable passwords such as:
 - Regenerate, Randomise all and Copy each provide a distinct icon animation, while respecting reduced-motion preferences. The order rows move into their new positions, and the two Copy squares overlap before separating again.
 - The separator field flashes its border when the character changes.
 - **Randomise all** smoothly moves the slider thumbs to guaranteed-new values while their number badges pop at each step.
+- On phones, the three main actions stack at equal full width in their natural Regenerate, Randomise all, Copy order.
 - Special characters are selected from nine clear, commonly accepted symbols.
 - Generated passwords are never transmitted, stored or logged.
 - The site has no analytics, external libraries, third-party scripts, forms or network requests.
