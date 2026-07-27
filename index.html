@@ -7,9 +7,9 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none';">
   <title>Simple Password Generator</title>
-  <link rel="stylesheet" href="styles-v16.css">
+  <link rel="stylesheet" href="styles-v17.css">
   <script src="words-v3.js" defer></script>
-  <script src="app-v15.js" defer></script>
+  <script src="app-v16.js" defer></script>
 </head>
 <body>
   <main>
@@ -19,7 +19,24 @@
       <output id="password" aria-live="polite"></output>
     </section>
 
-    <section class="controls" aria-label="Password options">
+    <button id="settings-toggle" class="settings-toggle" type="button" aria-expanded="false" aria-controls="settings-panel">
+      <span class="settings-toggle-label">
+        <svg class="button-icon settings-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h10"></path>
+          <path d="M18 7h2"></path>
+          <circle cx="16" cy="7" r="2"></circle>
+          <path d="M4 17h2"></path>
+          <path d="M10 17h10"></path>
+          <circle cx="8" cy="17" r="2"></circle>
+        </svg>
+        <span>Settings</span>
+      </span>
+      <svg class="button-icon settings-chevron" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m8 10 4 4 4-4"></path>
+      </svg>
+    </button>
+
+    <section id="settings-panel" class="controls" aria-label="Password options">
       <div class="options-layout">
         <div class="settings-pane" aria-label="Password components">
           <div class="control">
@@ -61,8 +78,7 @@
             </div>
 
             <div id="manual-order" class="manual-order">
-              <p id="order-help" class="order-help">Drag a row—the blue line shows where it will land—or use the arrow buttons.</p>
-              <ul id="order-list" class="order-list" aria-label="Password group order" aria-describedby="order-help">
+              <ul id="order-list" class="order-list" aria-label="Password group order">
                 <li class="order-item" draggable="true" aria-grabbed="false" data-group="numbers">
                   <svg class="drag-handle" viewBox="0 0 16 24" aria-hidden="true">
                     <circle cx="5" cy="5" r="1.5"></circle>
